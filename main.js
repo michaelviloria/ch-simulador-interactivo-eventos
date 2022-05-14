@@ -57,9 +57,15 @@ function validarValorInput() {
 	for (let i = 0; i < inputs.length; i++) {
 		let inputsValores = parseInt(inputs[i].value);
 		if (!isNaN(inputsValores)) {
-			inputs[i].classList.remove("error");
-			inputs[i].classList.add("selected");
-			cantidadProductos.push(inputsValores);
+			if (inputsValores <= Zapatos[i].cantidad) {
+				inputs[i].classList.remove("error");
+				inputs[i].classList.add("selected");
+				cantidadProductos.push(inputsValores);
+			} else {
+				inputs[i].classList.remove("selected")
+				inputs[i].classList.add("error");
+				cantidadProductos.push(0);
+			}
 		} else {
 			inputs[i].classList.remove("selected")
 			inputs[i].classList.add("error");

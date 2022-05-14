@@ -20,7 +20,7 @@ h1, h3 {
 }
 
 #productContainer,
-#select-container {
+#selectContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 50px;
